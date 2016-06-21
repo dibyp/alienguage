@@ -9,13 +9,9 @@
       text-align: center;
     }
     .generated-result {
-      position: absolute;
       width: 300px;
       height: 200px;
-      z-index: 15;
-      top: 50%;
-      left: 50%;
-      margin: -100px 0 0 -150px;
+      margin: 0 auto;
       background: blue;
       color: white;
     }
@@ -56,12 +52,17 @@
         var h = Hangul.disassemble(char);
         var a = Hangul.disassemble(char);
         a[0] = 'ㅅ';
-        if (Hangul.endsWithConsonant(h)) {
-          h.pop();
+        for (var i = 0; i < 2; i++) {
           if (Hangul.endsWithConsonant(h)) {
             h.pop();
           };
         };
+        // if (Hangul.endsWithConsonant(h)) {
+        //   h.pop();
+        //   if (Hangul.endsWithConsonant(h)) {
+        //     h.pop();
+        //   };
+        // };
         return Hangul.assemble(h) + Hangul.assemble(a);
       }).join('');
   };
