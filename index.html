@@ -4,22 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE-Edge">
   <meta charset="UTF-8">
   <title>외계어 제조기 || Alienguage</title>
-  <style>
-    body {
-      text-align: center;
-    }
-    .generated-result {
-      position: absolute;
-      width: 300px;
-      height: 200px;
-      z-index: 15;
-      top: 50%;
-      left: 50%;
-      margin: -100px 0 0 -150px;
-      background: blue;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div class="generator">
@@ -46,31 +31,5 @@
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="hangul.js" type="text/javascript"></script>
-<script>
-  var alien = function(str) {
-    var a = str.split(' ');
-    var b = a.toString();
-    var c = b.replace(/,/g, "");
-
-    return c.split('').map(function(char) {
-        var h = Hangul.disassemble(char);
-        var a = Hangul.disassemble(char);
-        a[0] = 'ㅅ';
-        if (Hangul.endsWithConsonant(h)) {
-          h.pop();
-          if (Hangul.endsWithConsonant(h)) {
-            h.pop();
-          };
-        };
-        return Hangul.assemble(h) + Hangul.assemble(a);
-      }).join('');
-  };
-
-  $(function() {
-    $('.generator-button').click(function() {
-      console.log(alien($('.alien').val()));
-      $('.generated-result').text(alien($('.alien').val()));
-    });
-  });
-</script>
+<script src="alienguage.js"></script>
 </body>

@@ -1,0 +1,10 @@
+body {
+  text-align: center;
+}
+.generated-result {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  background: blue;
+  color: white;
+}
